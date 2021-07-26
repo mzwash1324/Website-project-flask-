@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Home page{% endblock %}
+{% block hd %}
+<script>
+    function to_logout(){window.location.replace("http://127.0.0.1:5000/logout");}
+    function add_to_diary(){window.location.replace("http://127.0.0.1:5000/${usr}-diary");}
+</script>
+<style>
+    .in{
+        width:115px;
+        height:40px;
+        color:darkblue;
+        background-color:floralwhite;
+        font-family:Arial;
+        font-size:20px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    <p style="margin-right:15px; margin-top:7px;" align="right"><input type="button" value="Logout"  onclick="to_logout()"/></p>
+    <h1 style="margin:auto; margin-right:265px; color:teal;" align="center">{{"Welcom back {0} !".format(usr)}}</h1>
+    <p style="margin-left: 135px; margin-top:65px; width:105px;"><input class="in" type="button" value="Add blog" onclick="add_to_diary()" /></p>
+    <form style="width:1350px; height:785px; margin-left:135px;" action="#" method="get">
+        <p style="color:firebrick; font-size:larger; margin-left:3px;">Blog title: </p>
+        <p style="font-size:larger; margin-left:3px;"><input type="text" name="ttl" /></p>
+        <textarea rows="16" cols="67" maxlength="1850" style="font-size:larger; margin-left:5px;" name="blog_content"></textarea>
+    </form>
+{% endblock %}
