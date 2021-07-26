@@ -1,8 +1,14 @@
 {% extends "base.html"%}
 {% block title %}Login page{% endblock %}
-{% block hd %} {% endblock %}
+{% block hd %}
+    <style>
+        #frm{
+            width:2350px; background-image: url({{ url_for('static', filename='img/home.jpg') }}); border: cornflowerblue ridge 3pt; height:1035px; margin-top:90px; margin-left:100px;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-<div id="frm" style="width:2350px; border: cornflowerblue ridge 3pt; height:1035px; margin-top:90px; margin-left:100px;">
+<div id="frm" >
     <form style="background-color:paleturquoise; margin-top:160px; margin-left:250px; color:firebrick; width:475px; height:800px; border:thistle solid 2pt;" action="#" method="post">
         <p style="font-size:larger; margin-left:3px;"><b>Name: </b></p>
         <p><input type="text" name="nm" /></p>
